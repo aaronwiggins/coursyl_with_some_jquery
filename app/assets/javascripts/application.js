@@ -28,13 +28,12 @@ function hideDeletedElement() {
 }
 
 function hideAddElement() {
-  lastLink = document.getElementById('last-button');
-  lastLink.parentElement.parentElement.hidden = true;
+  var lastLink = $('#last-button').closest(".association.container").hide();
 }
 
 function showAddElement() {
-  lastLink = document.getElementById('last-button');
-  lastLink.parentElement.parentElement.hidden = false;
+  var lastLink = $('#last-button').closest(".association.container").show();
+  // lastLink.parentElement.parentElement.hidden = false;
 }
 
 function smoothScroll() {
@@ -46,3 +45,7 @@ function smoothScroll() {
 }
 
 $(smoothScroll);
+
+$('#myModal').on('show', function (e) {
+    if (!data) return e.preventDefault() // stops modal from being shown
+})

@@ -4,6 +4,9 @@
   <i class="fa fa-edit muted" title="Take Assignment"></i>
 <% end %>
 
+<%= render partial: 'add_date', locals: {assignment: assignment} %>
+
+
 <% if current_user && current_user.teaching?(assignment.course) %>
   <% if assignment.status(current_user).name == "Future" %>
     <i class="fa fa-legal muted"></i>
@@ -16,5 +19,9 @@
     <% end %>
     <%= link_to '<i class="fa fa-bar-chart-o" title="View Grades"></i>'.html_safe, view_grades_assignment_path(assignment) %>
   <% end %>
+  <a href="#myModal<%= "#{assignment.id}" %>" data-toggle="modal">
+    <i class="fa fa-calendar" title="Take Assignment"></i>
+  </a>
+
   <%= link_to 'Edit', edit_assignment_path(assignment), class: "btn btn-mini" %>
 <% end %>
