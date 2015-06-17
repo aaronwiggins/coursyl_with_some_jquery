@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require d3
 //= require_tree .
+//= require datetimepicker
 
 function onlyOnce() {
   var button = $(event.target);
@@ -33,7 +34,6 @@ function hideAddElement() {
 
 function showAddElement() {
   var lastLink = $('#last-button').closest(".association.container").show();
-  // lastLink.parentElement.parentElement.hidden = false;
 }
 
 function smoothScroll() {
@@ -49,3 +49,13 @@ $(smoothScroll);
 $('#myModal').on('show', function (e) {
     if (!data) return e.preventDefault() // stops modal from being shown
 })
+
+function date() {
+$('.date_stuff').datetimepicker({
+  format:'d.m.Y H:i',
+  inline:true,
+  lang:'en'
+});
+}
+
+$(date);

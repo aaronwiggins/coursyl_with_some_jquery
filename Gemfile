@@ -25,6 +25,10 @@ gem 'jbuilder', '~> 1.2'
 # Converts markdown text to HTML
 gem 'redcarpet'
 
+source 'https://rails-assets.org' do
+  gem 'rails-assets-datetimepicker'
+end
+
 gem 'd3-rails'
 gem 'rails-reveal-js'
 gem 'font-awesome-rails'

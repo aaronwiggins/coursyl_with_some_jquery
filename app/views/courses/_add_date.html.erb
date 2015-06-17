@@ -4,19 +4,19 @@
     <h3 id="myModalLabel">Modal header</h3>
   </div>
   <%= form_for(assignment) do |f| %>
-
+  <!-- call date time on the text field class not on the span -->
   <div class="modal-body">
     <span class="field-label">
       <%= f.label :active_at, "Start Date:" %>
     </span>
     <div class="input-prepend">
-        <%= f.text_field :active_at %>
+        <%= f.text_field :active_at, class: 'date_stuff' %>
     </div>
     <span class="field-label">
       <%= f.label :due_at, "Due Date:" %>
     </span>
     <div class="input-prepend">
-      <%= f.text_field :due_at %>
+      <%= f.text_field :due_at, class: 'date_stuff' %>
     </div>
   </div>
   <div class="modal-footer">
